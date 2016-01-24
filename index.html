@@ -57,11 +57,15 @@ video recording of the tests.</p>
   <span aria-hidden="true" class="octicon octicon-link"></span>
 </a>3. SQL</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects.
-  Author your page content here<a href="https://guides.github.com/features/mastering-markdown/">using GitHub
-    Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated,
-  you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync
-  your repository and you’ll see the new branch.</p>
+<p><strong>a)</strong> From Employee ( id, name, department_fk ) (10 records) , Department ( id, name) (5 records) tables, selecting everything would return 50 results. Since we neglect to define the correlation between tables
+using a WHERE clause, this acts as in a CROSS JOIN between tables, giving the value of one column/-set associated with every other possible result selected. In this case SELECT * FROM 'Employee', 'Department' is equivalent to
+  SELECT * FROM 'Employee' CROSS JOIN 'Department'</p>
+<p><strong>b)</strong> In order to select the first 5 records from a table, we can use <code>limit</code> on the results. <br> SELECT * from table_name limit 5 </p>
+<p><strong>c)</strong> The Having clause its mostly useful with aggregate functions like COUNT, SUM, and is used with the Group By clause. The Group By clause is used to create groups of result-sets.
+  <br> For example, table <code>Spending</code> with column:data <br> Name: 'A', 'B', 'C', 'A', 'B' and Spent: 10, 20, 15, 10, 10 is created. <br>
+  <code>SELECT Name, sum(Spent) from Spending group by Name; </code> <br>This will allow us to treat each name as a group and have all non repeating names with their sums aggregated.
+  <br> <code>SELECT Name, sum(Spent) from Spending group by Name having sum(Spent) > 15;</code> <br> This will allow us that from all the groups aggreated with their sum, to only
+show the ones which are Having CONDITION (here smaller than 15). In this case we exclude C from the result set.</p>
 
 
 <h3>
