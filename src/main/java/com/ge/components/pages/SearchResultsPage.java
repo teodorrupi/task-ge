@@ -48,18 +48,7 @@ public class SearchResultsPage extends PageObject {
 
     public void waitForSearchFinish(){
         WebDriverWait wait = new WebDriverWait(getDriver(), SessionValues.TIME_OUT_IN_SECONDS);
-        if(Objects.equals(trainTabLoadingAnimator.getAttribute("display"), "block")){
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_train > .animated")));
-        }
-
-        if(Objects.equals(airplaneTabLoadingAnimator.getAttribute("display"), "block")){
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_flight > .animated")));
-        }
-
-        if(Objects.equals(busTabLoadingAnimator.getAttribute("display"), "block")){
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_bus > .animated")));
-        }
-
+        wait.until(ExpectedConditions.presenceOfElementLocated(org.openqa.selenium.By.cssSelector("body.search-results-page")));
     }
 
     public void setSortingByPrice(){

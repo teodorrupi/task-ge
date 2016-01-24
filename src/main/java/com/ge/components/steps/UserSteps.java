@@ -49,7 +49,7 @@ public class UserSteps extends StepInit {
 
     @Step
     public void testPriceSortingFor(String forObject){
-        //waitForSearchFinish();
+        waitForSearchFinish();
 
         switch (forObject){
             case SessionValues.TRAIN:
