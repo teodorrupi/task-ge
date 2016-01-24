@@ -31,7 +31,6 @@ public class SearchResultsPage extends PageObject {
     @FindBy(css = PATH.BUST_TAB_LOADING_ANIMATOR_CSS)
     private WebElementFacade busTabLoadingAnimator;
 
-
     @FindBy(css = PATH.SORTING_BY_PRICE_OPTION_CSS)
     private WebElementFacade sortByPriceOption;
 
