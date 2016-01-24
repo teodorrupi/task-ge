@@ -1,11 +1,11 @@
 Meta:
-
-Narrative:
-As a user
-I want to perform an action
-So that I can achieve a business goal
+@tag Release: 1.0
+@testtype regression
+Narrative: Test correct sorting by price
 
 Scenario: Test sort by price sorts correctly
+Meta:
+@issue #ISSUE.NO
 Given user opens home page
 When user inputs from destination as 'Berlin'
 When user inputs to destination as 'Prague'
