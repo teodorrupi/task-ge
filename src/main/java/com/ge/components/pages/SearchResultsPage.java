@@ -53,8 +53,14 @@ public class SearchResultsPage extends PageObject {
             wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_train > .animated")));
         }
 
-       // wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_flight > .animated")));
-       // wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_bus > .animated")));
+        if(Objects.equals(airplaneTabLoadingAnimator.getAttribute("display"), "block")){
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_flight > .animated")));
+        }
+
+        if(Objects.equals(busTabLoadingAnimator.getAttribute("display"), "block")){
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(org.openqa.selenium.By.cssSelector("#tab_bus > .animated")));
+        }
+
     }
 
     public void setSortingByPrice(){
