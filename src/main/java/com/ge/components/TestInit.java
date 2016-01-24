@@ -1,6 +1,6 @@
-package com.ge.utils;
+package com.ge.components;
 
-import com.ge.utils.steps.EndUserSteps;
+import com.ge.components.steps.UserSteps;
 import net.thucydides.core.annotations.Steps;
 
 /**
@@ -11,5 +11,5 @@ import net.thucydides.core.annotations.Steps;
 public class TestInit {
 
     @Steps
-    protected EndUserSteps endUser;
+    protected UserSteps user;
 }
